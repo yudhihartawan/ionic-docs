@@ -158,7 +158,7 @@ Open the photo-gallery app folder in your code editor of choice, then navigate t
 <ion-title>Photo Gallery</ion-title>
 ```
 
-We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon.
+We put the visual aspects of our app into `<ion-content>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB) to the bottom of the page and set the camera image as the icon. 
 
 ```html
 <ion-content>
@@ -168,6 +168,19 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
     </ion-fab-button>
   </ion-fab>
 </ion-content>
+```
+
+You may need to add 'CUSTOM_ELEMENTS_SCHEMA' to the '@Component.schemas' of this component if the Angular uses Standalone Components.
+
+```html
+@Component({
+  selector: 'app-tab2',
+  templateUrl: 'tab2.page.html',
+  styleUrls: ['tab2.page.scss'],
+  standalone: true,
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
 ```
 
 Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and the icon name to “images”:
