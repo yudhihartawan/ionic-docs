@@ -129,6 +129,21 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
 </ion-content>
 ```
 
+If the grid does not show up, you might need to import common module in the imports section.
+
+```html
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-tab2',
+  templateUrl: 'tab2.page.html',
+  styleUrls: ['tab2.page.scss'],
+  standalone: true,
+  imports: [CommonModule, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, ExploreContainerComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+```
+
 Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
 
 Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
